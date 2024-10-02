@@ -10,7 +10,7 @@
         "seah-minlong": "Seah Minlong",
         "xan-ng": "Xan Ng",
         "chua-chong-sun": "Chua Chong Sun",
-        "jean-doe": "Jean Doe",
+        "justin-yeo": "Justin Yeo",
         "zhanzhi-lou": "Zhanzhi Lou"
       },
       "headingKeywords": {}
@@ -137,6 +137,14 @@
     },
     {
       "src": "team/johndoe.md",
+      "title": "John Doe's Project Portfolio Page",
+      "headings": {
+        "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/justinyeo.md",
       "title": "John Doe's Project Portfolio Page",
       "headings": {
         "project-addressbook-level-3": "Project: AddressBook Level 3"
