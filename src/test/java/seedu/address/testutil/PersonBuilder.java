@@ -6,15 +6,12 @@ import java.util.Set;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Date;
 import seedu.address.model.person.DonatedAmount;
-import seedu.address.model.person.Donor;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Hours;
 import seedu.address.model.person.Name;
-import seedu.address.model.person.Partner;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.PersonFactory;
 import seedu.address.model.person.Phone;
-import seedu.address.model.person.Volunteer;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
 
@@ -49,6 +46,9 @@ public class PersonBuilder {
         email = new Email(DEFAULT_EMAIL);
         address = new Address(DEFAULT_ADDRESS);
         tags = new HashSet<>();
+        hours = new Hours(DEFAULT_HOURS);
+        donatedAmount = null;
+        partnershipEndDate = null;
     }
 
     /**
@@ -60,13 +60,7 @@ public class PersonBuilder {
         email = personToCopy.getEmail();
         address = personToCopy.getAddress();
         tags = new HashSet<>(personToCopy.getTags());
-        if (personToCopy instanceof Volunteer) {
-            hours = ((Volunteer) personToCopy).getHours();
-        } else if (personToCopy instanceof Donor) {
-            donatedAmount = ((Donor) personToCopy).getDonatedAmount();
-        } else if (personToCopy instanceof Partner) {
-            partnershipEndDate = ((Partner) personToCopy).getEndDate();
-        }
+        hours = new Hours("30");
     }
 
     /**
