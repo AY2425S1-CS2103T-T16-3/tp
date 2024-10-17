@@ -115,6 +115,6 @@ public class Person {
     }
 
     public Role getRole() {
-        return Role.VOLUNTEER;
+        return Role.PERSON;
     }
 }
