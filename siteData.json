@@ -113,6 +113,7 @@
         "viewing-help-help": "Viewing help : help",
         "adding-a-person-add": "Adding a person: add",
         "listing-all-persons-list": "Listing all persons : list",
+        "sorting-the-displayed-list-sort": "Sorting the displayed list: sort",
         "editing-a-person-edit": "Editing a person : edit",
         "searching-persons-by-field-search": "Searching persons by field: search",
         "deleting-a-person-delete": "Deleting a person : delete",
