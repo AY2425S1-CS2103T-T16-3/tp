@@ -139,7 +139,9 @@
       "src": "index.md",
       "title": "",
       "headings": {
-        "addressbook-level-3": "AddressBook Level-3"
+        "contactsforgood-cfg": "ContactsForGood (CFG) 🤝🌍",
+        "key-features": "Key Features",
+        "get-started": "Get Started"
       },
       "headingKeywords": {}
     },
