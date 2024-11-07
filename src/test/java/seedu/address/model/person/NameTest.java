@@ -72,12 +72,9 @@ public class NameTest {
         assertTrue(nameAlice.compareTo(nameBob) < 0);
         assertTrue(nameBob.compareTo(nameAlice) > 0);
 
-        // names that differ in case -> compareTo is case-sensitive
-        assertTrue(nameAlice.compareTo(nameAliceUpper) != 0);
-        assertTrue(nameAlice.compareTo(nameAliceLower) != 0);
-
-        // ordering based on ASCII values
-        assertTrue(nameAliceUpper.compareTo(nameAliceLower) < 0);
+        // names that differ in case -> compareTo is not case-sensitive
+        assertTrue(nameAlice.compareTo(nameAliceUpper) == 0);
+        assertTrue(nameAlice.compareTo(nameAliceLower) == 0);
     }
 
     @Test
