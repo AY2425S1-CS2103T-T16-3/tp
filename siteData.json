@@ -163,9 +163,9 @@
     },
     {
       "src": "team/seahminlong.md",
-      "title": "John Doe's Project Portfolio Page",
+      "title": "Minlong's Project Portfolio Page",
       "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
+        "project-contacts-for-good": "Project: Contacts For Good"
       },
       "headingKeywords": {}
     }
