@@ -311,6 +311,6 @@ with(this){return _c('h2',{attrs:{"id":"appendix-planned-enhancements"}},[_c('st
 with(this){return _c('ol',[_c('li',[_c('strong',[_v("Allow contacts to have multiple phone numbers")]),_v(": Currently, contacts are only allowed to have one phone number.\nRealistically, contacts may have multiple phone numbers (e.g. home number, office number), so we plan to allow for contacts to have multiple numbers attached to them.")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Sun, 10 Nov 2024, 17:09:01 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Sun, 10 Nov 2024, 17:25:52 GMT+8]")])])])}
 }];
   
