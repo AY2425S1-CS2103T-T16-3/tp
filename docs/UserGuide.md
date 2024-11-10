@@ -19,6 +19,8 @@
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## Quick start
 
 1. Ensure you have Java `17` or above installed in your Computer.
@@ -49,6 +51,7 @@
 7. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
+
 <div style="page-break-after: always;"></div>
 
 ## Features
@@ -60,30 +63,17 @@
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.
   e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
 
-<br>
-
 * Each parameter is preceded by a **prefix**, which indicates the type of data the parameter represents.  
   For example:
     - `n/` is the prefix for `NAME`, as in `add n/John Doe`.
-    - `p/` is the prefix for `PHONE_NUMBER`, as in `add p/12345678`. 
+    - `p/` is the prefix for `PHONE_NUMBER`, as in `add p/12345678`.
   
-  <br>
+<br>
 
-* Any unrecognized parameter's prefix will be treated as part of the value for the preceding valid prefix. 
-    For example:
-    - Correct✅: `add n/John Doe p/12345678`
-    - Incorrect❌: `add n/John Doe xyz/12345678` (In this case, `xyz/12345678` will be treated as part of the name value, which
-      will result in an error)
-    - To prevent unexpected behavior, ensure only **valid prefixes** are used when entering commands.
-
-    <br>
-  
 * Items in square brackets are optional.
   e.g. `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.  
   Note: If an optional field is not required, **avoid** leaving the prefix empty, as this will result in an invalid command.
   e.g. `edit 1 n/NAME t/` is not a valid command
-
-<br> 
 
 * Items with `…`​ after them can be used multiple times including zero times.<br>
   e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
@@ -109,12 +99,8 @@
 * Parameters can be in any order.
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-<br>
-
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `exit` and `clear`) will be ignored.
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
-
-<br>
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </box>
@@ -152,66 +138,45 @@
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ### Adding a contact: `add`
 
 This command adds a contact to CFG.
-There are 4 types of contacts: Volunteer, Donor, Partner, Person (default).
+
+<box type="tip" seamless>
+
+**Tip:** There are 4 types of contacts - Volunteer, Donor, Partner, Person (default).
+
+</box>
 
 Format: `add [r/ROLE] n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​
 [h/HOURS] [d/DONATED_AMOUNT] [ped/PARTNERSHIP_END_DATE]`
 
-- `ROLE` (Optional): Specifies the type of contact. If not provided, the contact will be added as a general `Person`.
+- `ROLE`: Specifies the type of contact. If not provided, the contact will be added as a general `Person`.
 - `NAME`: The contact's full name (case-insensitive).
-- `PHONE_NUMBER`: The contact's phone number (Any length is allowed, accommodating 3-digit emergency numbers to 15-digit international numbers).
-- `EMAIL`: The contact's email address (Only **english** emails are currently supported).
+- `PHONE_NUMBER`: The contact's phone number.
+- `EMAIL`: The contact's email address.
 - `ADDRESS`: The contact's physical address.
-- `TAG` (Optional): Additional tags associated with the contact (A contact can have any number of tags, including none).
-- Role-specific fields(not required for `Person`)
-  - **Volunteer**: 
-    -  `h/HOURS` - Represents contributed hours.
-  - **Donor**:
-  - `d/DONATED_AMOUNT` - Represents total donation amount in thousands of USD.
-      - The amount can include **up to two decimal places** for precision (e.g., `123.45` represents 123,450 USD).
-      - The amount is always displayed in thousands of dollars. For very large numbers, **scientific notation** will 
-        be used automatically (e.g., `12345678` will be displayed as `1.2345678E7`, equivalent to 12,345,678 thousand USD)
-  - **Partner**: 
-    - `ped/PARTNERSHIP_END_DATE` - Represents the partnership's end date.
-      - The date must be in the **YYYY-MM-DD** format.
-      - The date **must be a valid date**:
-          - A valid date is one that has existed in the past or will exist in the future. Both past and future dates are accepted as long as they are actual calendar dates.
-          - Examples of **valid dates**:
-              - `2023-03-15` (Past date).
-              - `2025-10-20` (Future date).
-          - Examples of **invalid dates**:
-              - `2021-02-29` (February 29 does not exist in 2021 because it is not a leap year).
-              - `2023-03-33` (March does not have 33 days).
+- `TAG`: Additional tags associated with the contact (_A contact can have any number of tags, including none_).
+- Role-specific fields (not required for `Person`):
+    - **Volunteer**: `h/HOURS`- Represents contributed hours.
+    - **Donor**: `d/DONATED_AMOUNT`- Represents total donation amount in thousands of USD.
+    - **Partner**: `ped/PARTNERSHIP_END_DATE` - Represents the partnership's end date. Must be in the **YYYY-MM-DD** format and be a valid date (e.g. 2024-11-07).
 
 <box type="info" seamless>
 
-1. **Role-specific fields must match the specified role:**
+**Role-specific fields must match the specified role:**
     * For `Volunteer`, `h/HOURS` is required.
     * For `Donor`, `d/DONATED_AMOUNT` is required.
     * For `Partner`, `ped/PARTNERSHIP_END_DATE` is required.
     * If the specified role does not match the provided role-specific fields, the `add` command will be deemed invalid.
-2. **Contact Uniqueness**: Contacts are distinguished **by their names only**. 
-    * This means that duplicate names are not allowed. 
-    * However, multiple contacts can share the same phone number or email address if their names are unique.
 
 </box>
-
-#### Notes on valid and invalid fields
-- CFG differentiates names by checking both the characters and the number of spaces. John Doe
-with a single space is NOT the same person as John&nbsp;&nbsp;&nbsp;Doe. If there exists a John Doe currently in 
-ContactsForGood, you may add another John &nbsp;Doe with 2 spaces between.
-- Note: Email addresses without periods (Single Label Domains) **are supported**. 
-e.g. johndoe@intranet is a valid email.
-
 
 Examples:
 * `add r/volunteer h/10 n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
 * `add r/donor d/100 n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/rich`
-
-<div style="page-break-after: always;"></div>
 
 ### Clearing all entries : `clear`
 
@@ -241,6 +206,8 @@ Examples:
 * `search n/Betsy` followed by `delete 1 3-5` deletes the 1st, 3rd, 4th, and 5th persons in the results of the
   `search` command.
 
+<div style="page-break-after: always;"></div>
+
 ### Editing a person : `edit`
 
 Edits an existing person in CFG.
@@ -254,11 +221,16 @@ Format: `edit INDEX [r/ROLE] [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…
 * The result of an edit can be identical to the original person, but it **cannot be identical to any other existing user in CFG**.
 * When editing tags, the existing tags of the person will be removed i.e. adding of tags is not cumulative.
 * You can remove all the person’s tags by typing `t/` without specifying any tags after it.
-* Role-specific fields must correspond to the resulting role after editing.
-    * For example, if you change the role to `Volunteer`, you must also provide `h/HOURS`.
-    * Similarly, if the role is changed to `Donor`, `d/DONATED_AMOUNT` is required,
-    * For `Partner`, `ped/PARTNERSHIP_END_DATE` must be provided.
-* If the resulting role does not have the specified field, the edit will be invalid.
+
+<box type="info" seamless>
+
+**Role-specific fields must correspond to the resulting role after editing:**
+* For `Volunteer`, `h/HOURS` is required.
+* For `Donor`, `d/DONATED_AMOUNT` is required.
+* For `Partner`, `ped/PARTNERSHIP_END_DATE` is required.
+* If the specified role does not have the specified field, the `edit` command will be deemed invalid.
+
+</box>
 
 Examples:
 *  `edit 1 p/91234567 e/johndoe@example.com` Edits the phone number and email address of the 1st person to be `91234567` and `johndoe@example.com` respectively.
@@ -275,7 +247,7 @@ Format: `search PREFIX/KEYWORD [MORE_PREFIX/KEYWORD]…`
 * The order of the prefixes provided does not affect search results. e.g. `search n/alex t/friends` will return the same result as `search t/friends n/alex`.
 * Only full words will be matched e.g. `friend` will not match `friends`.
 * For name searches, the order of keywords does not matter (e.g., Hans Bo will match Bo Hans).
-* For name searches, persons matching any of the keywords given will be returned (eg., `search n/Alex David` returns both `Alex` and `David`).
+* For name searches, persons matching any of the keywords given will be returned (e.g. `search n/Alex David` returns both `Alex` and `David`).
 * For searches with multiple prefixes, only persons matching all keywords corresponding to the prefixes will be returned.
 
 <box type="tip" seamless>
@@ -322,7 +294,6 @@ Format: `sort [s/SORT_OPTION]`
 
 **Supported sort options include**:
 * `name`: Sorts contacts alphabetically by name.
-  * For names with numbers, sorting follows **alphabetical order first**, then **numerical order** (e.g. "alfred" < "alfred2" < "ben").
 * `hours`: Sorts volunteers by hours contributed (in descending order).
 * `donations`: Sorts donors by donation amount (in descending order).
 * `end_date`: Sorts partners by partnership end date (from earliest to latest).
@@ -332,6 +303,8 @@ Examples:
 * `sort`
 * `sort s/name`
 * `sort s/hours`
+
+<div style="page-break-after: always;"></div>
 
 ### Creating a group : `createGroup`
 
@@ -362,7 +335,7 @@ Format: `addToGroup g/GROUP_NAME m/INDICES`
 must be valid indices.
 * If either of the above conditions are not met, the command will fail.
 * CFG differentiates group names by checking both the characters and the number of spaces. Blood Drive
-    with a single space is NOT the same group as Blood&nbsp;&nbsp;&nbsp;Drive.
+    with a single space will **not** be the same group as Blood&nbsp;&nbsp;&nbsp;Drive.
 
 Example:
 * `addToGroup g/blood drive 2024 m/1 2 5 6` adds the persons at index 1, 2, 5 and 6 of
@@ -380,14 +353,14 @@ Format: `removeFromGroup g/GROUP_NAME m/INDICES`
   must be valid indices.
 * If either of the above conditions are not met, the command will fail.
 
-Example:
-* `removeFromGroup g/blood drive 2024 m/1 2 5 6` removes the persons at index 1, 2, 5 and 6 of
-  the current list in view from the existing group named `blood drive`.
-
 <box type="tip" seamless>
 
 **Tip:** For ease of use, first list out the people in the group using the `search` command, then remove persons using this command.
 </box>
+
+Example:
+* `removeFromGroup g/blood drive 2024 m/1 2 5 6` removes the persons at index 1, 2, 5 and 6 of
+  the current list in view from the existing group named `blood drive`.
 
 ### Editing a group's name : `editGroupName`
 
@@ -429,6 +402,8 @@ Format: `deleteGroup g/GROUP_NAME`
 
 Example:
 * `deleteGroup g/blood drive 2024`
+
+<div style="page-break-after: always;"></div>
 
 ### Viewing help : `help`
 
