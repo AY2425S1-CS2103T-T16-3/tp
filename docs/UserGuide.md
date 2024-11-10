@@ -6,7 +6,13 @@
 
 # CFG User Guide
 
-ContactsForGood (CFG) is a **desktop app for managing contacts, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, CFG can get your contact management tasks done faster than traditional GUI apps.
+**Target user:** 
+> Administrators of small scale NGOs
+
+**Value Proposition:**
+> ContactsForGood (CFG) helps NGO administrators efficiently manage donors, volunteers, and partners by organising 
+> contacts and tracking engagement. With its typing-focused interface and offline, editable data, CFG hopes to streamline 
+> contact management, allowing administrators to focus on outreach and mission-critical tasks.
 
 <!-- * Table of Contents -->
 <page-nav-print />
@@ -65,7 +71,7 @@ ContactsForGood (CFG) is a **desktop app for managing contacts, optimized for us
   within range of the last displayed person list.
 
 * `INDICES` takes in multiple `INDEX`s<br>
-  * In this case, each `INDEX` can be a single number (e.g., `2`) or a closed range (e.g., `5-9`)
+  * In this case, each `INDEX` can be a single number (e.g., `2`) or a closed range (e.g., `5-9`).
   * Each `INDEX` is separated by spaces (e.g. of an `INDICES`, `1 2 3 5-9`).
   * **Note:** In a closed range, there must be no spaces between the numbers and the hyphen (e.g., `5-9` is correct, but `5 - 9` or `5 -9` or `5- 9` is invalid).
   * `INDICES` expects at least one `INDEX` unless the `INDICES` item is optional.
@@ -209,7 +215,7 @@ Format: `search PREFIX/KEYWORD [MORE_PREFIX/KEYWORD]…`
 * The order of the prefixes provided does not affect search results. e.g. `search n/alex t/friends` will return the same result as `search t/friends n/alex`.
 * Only full words will be matched e.g. `friend` will not match `friends`.
 * For name searches, the order of keywords does not matter (e.g., Hans Bo will match Bo Hans).
-* For name searches, persons matching any of the keywords given will be returned (eg., `search n/Alex David` returns both `Alex` and `David`).
+* For name searches, persons matching any of the keywords given will be returned (e.g. `search n/Alex David` returns both `Alex` and `David`).
 * For searches with multiple prefixes, only persons matching all keywords corresponding to the prefixes will be returned.
 
 <box type="tip" seamless>
