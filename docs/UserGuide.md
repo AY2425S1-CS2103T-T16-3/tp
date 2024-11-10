@@ -138,8 +138,6 @@
 
 --------------------------------------------------------------------------------------------------------------------
 
-<div style="page-break-after: always;"></div>
-
 ### Adding a contact: `add`
 
 This command adds a contact to CFG.
@@ -206,8 +204,6 @@ Examples:
 * `search n/Betsy` followed by `delete 1 3-5` deletes the 1st, 3rd, 4th, and 5th persons in the results of the
   `search` command.
 
-<div style="page-break-after: always;"></div>
-
 ### Editing a person : `edit`
 
 Edits an existing person in CFG.
@@ -269,8 +265,6 @@ Examples: <br>
 * `search r/person` returns all contacts with role `Person` like `Alex Yeoh`, `Irfan Ibrahim` and `Charlotte Oliveiro`.
 * `search n/charlotte t/neighbours p/93210283` returns all persons with name matching `charlotte`, tag matching `neighbours`, `phone number` 93210283 like `Charlotte Oliveiro`. <br>
 
-![result for 'search charlotte'](images/search_charlotte.png)
-
 ### Listing all persons : `list`
 
 Shows a list of all persons in CFG.
@@ -303,8 +297,6 @@ Examples:
 * `sort`
 * `sort s/name`
 * `sort s/hours`
-
-<div style="page-break-after: always;"></div>
 
 ### Creating a group : `createGroup`
 
@@ -402,8 +394,6 @@ Format: `deleteGroup g/GROUP_NAME`
 
 Example:
 * `deleteGroup g/blood drive 2024`
-
-<div style="page-break-after: always;"></div>
 
 ### Viewing help : `help`
 
