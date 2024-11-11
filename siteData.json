@@ -165,22 +165,6 @@
         "project-addressbook-level-3": "Project: AddressBook Level 3"
       },
       "headingKeywords": {}
-    },
-    {
-      "src": "team/justinyeo.md",
-      "title": "John Doe's Project Portfolio Page",
-      "headings": {
-        "project-addressbook-level-3": "Project: AddressBook Level 3"
-      },
-      "headingKeywords": {}
-    },
-    {
-      "src": "team/seahminlong.md",
-      "title": "Minlong's Project Portfolio Page",
-      "headings": {
-        "project-contacts-for-good": "Project: Contacts For Good"
-      },
-      "headingKeywords": {}
     }
   ]
 }
