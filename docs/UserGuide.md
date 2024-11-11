@@ -27,7 +27,7 @@
 
 2. Download the latest `.jar` file from [here](https://github.com/AY2425S1-CS2103T-T16-3/tp/releases).
 
-3. Copy the file to the folder you want to use as the _home folder_ for CFG.
+3. Copy the file to the folder you want to use as the _home folder_ for CFG (e.g. create the folder "contactsforgood" in "Documents").
 
 4. Open a command terminal, `cd` into the folder you put the jar file in.
 
@@ -64,8 +64,6 @@
 
 --------------------------------------------------------------------------------------------------------------------
 
-<div style="page-break-after: always;"></div>
-
 ## Features
 
 <box type="info" seamless>
@@ -85,7 +83,7 @@
 * Items in square brackets are optional.
   e.g. `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.  
   Note: If an optional field is not required, **avoid** leaving the prefix empty, as this will result in an invalid command.
-  e.g. `edit 1 n/NAME t/` is not a valid command
+  e.g. `edit 1 n/` is not a valid command
 
 * Items with `…`​ after them can be used multiple times including zero times.<br>
   e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
@@ -177,10 +175,10 @@ Format: `add [r/ROLE] n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​
 <box type="info" seamless>
 
 **Role-specific fields must match the specified role:**
-    * For `Volunteer`, `h/HOURS` is required.
-    * For `Donor`, `d/DONATED_AMOUNT` is required.
-    * For `Partner`, `ped/PARTNERSHIP_END_DATE` is required.
-    * If the specified role does not match the provided role-specific fields, the `add` command will be deemed invalid.
+* For `Volunteer`, `h/HOURS` is required.
+* For `Donor`, `d/DONATED_AMOUNT` is required.
+* For `Partner`, `ped/PARTNERSHIP_END_DATE` is required.
+* If the specified role does not match the provided role-specific fields, the `add` command will be deemed invalid.
 
 </box>
 
